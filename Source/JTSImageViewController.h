@@ -93,6 +93,12 @@ extern CGFloat const JTSImageViewController_DefaultBackgroundBlurRadius;
  */
 - (void)dismiss:(BOOL)animated;
 
+/**
+ Application loads image by itself and calls these public interfaces to show loaded image.
+ */
+- (void)cancelProgressTimer;
+- (void)updateInterfaceWithImage:(UIImage *)image;
+
 @end
 
 ///--------------------------------------------------------------------------------------------------------------------
