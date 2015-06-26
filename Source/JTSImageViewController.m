@@ -45,22 +45,6 @@ typedef struct {
     BOOL presentingViewControllerPresentedFromItsUnsupportedOrientation;
 } JTSImageViewControllerStartingInfo;
 
-typedef struct {
-    BOOL isAnimatingAPresentationOrDismissal;
-    BOOL isDismissing;
-    BOOL isTransitioningFromInitialModalToInteractiveState;
-    BOOL viewHasAppeared;
-    BOOL isRotating;
-    BOOL isPresented;
-    BOOL rotationTransformIsDirty;
-    BOOL imageIsFlickingAwayForDismissal;
-    BOOL isDraggingImage;
-    BOOL scrollViewIsAnimatingAZoom;
-    BOOL imageIsBeingReadFromDisk;
-    BOOL isManuallyResizingTheScrollViewFrame;
-    BOOL imageDownloadFailed;
-} JTSImageViewControllerFlags;
-
 #define USE_DEBUG_SLOW_ANIMATIONS 0
 
 ///--------------------------------------------------------------------------------------------------------------------
@@ -82,7 +66,7 @@ typedef struct {
 @property (assign, nonatomic, readwrite) JTSImageViewControllerMode mode;
 @property (assign, nonatomic, readwrite) JTSImageViewControllerBackgroundOptions backgroundOptions;
 @property (assign, nonatomic) JTSImageViewControllerStartingInfo startingInfo;
-@property (assign, nonatomic) JTSImageViewControllerFlags flags;
+@property (assign, nonatomic, readwrite) JTSImageViewControllerFlags flags;
 
 // Autorotation
 @property (assign, nonatomic) UIInterfaceOrientation lastUsedOrientation;

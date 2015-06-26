@@ -39,6 +39,22 @@ typedef NS_OPTIONS(NSInteger, JTSImageViewControllerBackgroundOptions) {
 extern CGFloat const JTSImageViewController_DefaultAlphaForBackgroundDimmingOverlay;
 extern CGFloat const JTSImageViewController_DefaultBackgroundBlurRadius;
 
+typedef struct {
+    BOOL isAnimatingAPresentationOrDismissal;
+    BOOL isDismissing;
+    BOOL isTransitioningFromInitialModalToInteractiveState;
+    BOOL viewHasAppeared;
+    BOOL isRotating;
+    BOOL isPresented;
+    BOOL rotationTransformIsDirty;
+    BOOL imageIsFlickingAwayForDismissal;
+    BOOL isDraggingImage;
+    BOOL scrollViewIsAnimatingAZoom;
+    BOOL imageIsBeingReadFromDisk;
+    BOOL isManuallyResizingTheScrollViewFrame;
+    BOOL imageDownloadFailed;
+} JTSImageViewControllerFlags;
+
 ///--------------------------------------------------------------------------------------------------------------------
 /// JTSImageViewController
 ///--------------------------------------------------------------------------------------------------------------------
@@ -50,6 +66,8 @@ extern CGFloat const JTSImageViewController_DefaultBackgroundBlurRadius;
 @property (strong, nonatomic, readonly) UIImage *image;
 
 @property (assign, nonatomic, readonly) JTSImageViewControllerMode mode;
+
+@property (assign, nonatomic, readonly) JTSImageViewControllerFlags flags;
 
 @property (assign, nonatomic, readonly) JTSImageViewControllerBackgroundOptions backgroundOptions;
 
